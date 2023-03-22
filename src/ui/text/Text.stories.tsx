@@ -170,25 +170,25 @@ BlackWeight.args = {
 export const LeftAlign = Template.bind({})
 LeftAlign.args = {
   align: "left",
-  fullWidth: true
+  type: "p"
 }
 
 export const CenterAlign = Template.bind({})
 CenterAlign.args = {
   align: "center",
-  fullWidth: true
+  type: "p"
 }
 
 export const RightAlign = Template.bind({})
 RightAlign.args = {
   align: "right",
-  fullWidth: true
+  type: "p"
 }
 
 export const JustifyAlign = Template.bind({})
 JustifyAlign.args = {
   align: "justify",
-  fullWidth: true
+  type: "p"
 }
 
 // Transform

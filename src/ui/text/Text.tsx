@@ -16,12 +16,12 @@ const textStyles = cva([], {
       xl: "text-xl",
       "2xl": "text-2xl",
       "3xl": "text-3xl",
-      "4xl": "text-4xl",
-      "5xl": "text-5xl",
-      "6xl": "text-6xl",
-      "7xl": "text-7xl",
-      "8xl": "text-8xl",
-      "9xl": "text-9xl"
+      "4xl": "text-4xl leading-loose",
+      "5xl": "text-5xl leading-loose",
+      "6xl": "text-6xl leading-loose",
+      "7xl": "text-7xl leading-loose",
+      "8xl": "text-8xl leading-loose",
+      "9xl": "text-9xl leading-loose"
     },
     italics: {
       true: "italic"
@@ -74,11 +74,29 @@ const textStyles = cva([], {
 
 interface Props extends VariantProps<typeof textStyles> {
   children?: React.ReactNode
-  fullWidth?: boolean
+  className?: string
+  type?: "span" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
 }
 
-export function Text(props: Props) {
-  if (props.fullWidth)
-    return <p className={textStyles(props)}>{props.children}</p>
-  else return <span className={textStyles(props)}>{props.children}</span>
+export function Text({ className, ...props }: Props) {
+  const classes = `${className} ${textStyles(props)}`
+
+  switch (props.type ?? "span") {
+    case "span":
+      return <span className={classes}>{props.children}</span>
+    case "p":
+      return <p className={classes}>{props.children}</p>
+    case "h1":
+      return <h1 className={classes}>{props.children}</h1>
+    case "h2":
+      return <h2 className={classes}>{props.children}</h2>
+    case "h3":
+      return <h3 className={classes}>{props.children}</h3>
+    case "h4":
+      return <h4 className={classes}>{props.children}</h4>
+    case "h5":
+      return <h5 className={classes}>{props.children}</h5>
+    case "h6":
+      return <h6 className={classes}>{props.children}</h6>
+  }
 }
