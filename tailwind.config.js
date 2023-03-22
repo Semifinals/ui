@@ -55,7 +55,14 @@ module.exports = {
         danger: "#e74c3c",
         "danger-light": "#e67e22",
         success: "#05c46b",
-        "success-light": "#0be881"
+        "success-light": "#0be881",
+
+        // ABOVE WILL BE REPLACED
+
+        black: "#000000",
+        white: "#FFFFFF",
+        faded: "#C8C8C8",
+        "less-faded": "#615D5A"
       }
     }
   },
